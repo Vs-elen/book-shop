@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Roboto:wght@100;300;400;500;700&display=swap');
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+   
+}
+
+a,
+button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+a:hover {
+    opacity: .8;
+}
+
+
+
+p {
+
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+color: #191919;
+}
+
+.section-container {
+    max-width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    width: 100%;
+    background: #4C320A;    
+    position: fixed;
+    top: 0;
+    z-index: 9999999;
+}
+
+.header .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.picture-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+a.logo {
+   width: 362px;
+   height: 52px; 
+   margin-top: 12px;
+   margin-bottom: 12px;
+   display: block;
+}
+
+.header__link {
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 140%;
+color: #fff;
+text-transform: uppercase;
+}
+
+section {
+    margin-top: 70px;
+}
+
+.hero {
+    margin-top: 0;    
+    padding-bottom: 400px;
+    background-image: url('../../assets/images/book-g.jpg');
+    min-height: 300px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-title {    
+    padding-top: 170px;
+    text-align: center;
+    font-style: normal;
+font-weight: 700;
+font-size: 56px;
+line-height: 140%;
+color: #1e1404;
+}
+
+.book-catalog {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 500;
+font-size: 38px;
+line-height: 120%;
+color: #1e1404;
+}
+
+.book-catalog__content {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+.book-catalog__picture {    
+    width: 100%;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-catalog__info {
+    margin-top: 24px;
+}
+
+.book-catalog__title {
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.book-catalog__price {
+    margin-top: 16px;
+    font-weight: 500;
+}
+
+.book-catalog__more {
+    width: 80%;
+    position: absolute;
+    bottom: -100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px 20px;
+  background: #4C320A; 
+  border: none;
+  color: #fff;
+  font-size: 16px;
+z-index: 1;
+}
+
+.book-catalog__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #4C320A; 
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+.bag__confirm:hover,
+.book-catalog__more:hover {
+    background: #6b4710; 
+}
+
+.book-catalog__card:hover .book-catalog__more {
+    bottom: 20%;
+}
+
+.book-catalog__card:hover .book-catalog__overlay {
+    opacity: .3;
+}
+
+.book-catalog__add {
+    margin-top: 24px;
+    color: #4C320A;
+    font-style: italic;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.book-catalog__add:hover {
+    color: #6b4710; 
+}
+
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #4C320A;    
+}
+
+footer p {
+    color: #fff;
+}
+
+footer .section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup {
+    position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: visible;
+  opacity: 1;
+z-index: 999999;
+}
+
+.popup__content {    
+    margin-top: 20px;
+    padding: 20px 40px 40px;
+    background: #fff;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;    
+    z-index: 2;
+  }
+
+  .popup__close {    
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  .popup__content .book-catalog__picture {
+    max-width: 190px;
+    margin-right: 32px;
+  }
+
+  .popup__wrap {
+    display: flex;
+  }
+
+  .popup__title {
+    font-weight: 500;
+font-size: 38px;
+line-height: 120%;
+color: #1e1404;
+  }
+
+  .popup__text {
+    font-size: 18px;
+    margin-top: 16px;
+    max-width: 600px;
+  }
+
+  .popup__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .book-catalog__bag .book-catalog__content{
+margin-top: 54px;
+  }
+
+  .book-catalog__bag .book-catalog__card {
+    position: relative;
+  }
+
+  .book-catalog__bag .popup__close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .book-catalog__total {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 500;
+font-size: 18px;
+line-height: 140%;
+
+text-transform: uppercase;
+  }
+
+  .bag__confirm {  
+    margin-top: 40px;
+text-decoration: none;
+    padding: 10px 20px;
+  background: #4C320A; 
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  }
+
+ 
