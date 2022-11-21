@@ -191,10 +191,10 @@ const checkHouse = () => {
     let valid = false;
     const houseName = house.value;
     if (!isRequired(houseName)) {
-        showError(house, 'House name cannot be blank.');
+        showError(house, 'House number cannot be blank.');
         validHouse = false;
     } else if (!isPositive(houseName)) {
-        showError(house, 'House name must be a number.');
+        showError(house, 'House number must be a number.');
         validHouse = false;
     } else {
         showSuccess(house);
@@ -208,13 +208,13 @@ const checkFlat = () => {
     let valid = false;
     const flatName = flat.value;
     if (!isRequired(flatName)) {
-        showError(flat, 'Flat name cannot be blank.');
+        showError(flat, 'Flat number cannot be blank.');
         validFlat= false;
     } else if (!isNumDash(flatName)) {
-        showError(flat, 'Flat name must be a number.');
+        showError(flat, 'Flat number must be a number.');
         validFlat= false;
     } else if (hasStartDash(flatName)) {
-        showError(flat, 'Flat name must not start with dash.');
+        showError(flat, 'Flat number must not start with dash.');
         validFlat= false;
     } else {
         showSuccess(flat);
