@@ -19,12 +19,23 @@ const sectionContainer = document.createElement('div');
 const picture = document.createElement('img');
 sectionContainer.classList.add('section-container');
 logo.classList.add('logo');
+logo.setAttribute('href', "https://vs-elen.github.io/book-shop/pages/catalog/index.html");
 picture.classList.add('picture-item');
 
-const headerLink = document.createElement('a');
-headerLink.classList.add('header__link');
-headerLink.innerText = 'Place Order'
 
+
+
+const headerLink = document.createElement('a');
+headerLink.setAttribute('href', "https://vs-elen.github.io/book-shop/pages/delivery/index.html");
+headerLink.classList.add('header__link');
+const headerLinkText = document.createElement('p');
+headerLinkText.classList.add('header__text');
+headerLinkText.innerText = 'Place Order'
+const headerLinkNumber = document.createElement('p');
+headerLinkNumber.classList.add('header__text-num');
+
+headerLink.appendChild(headerLinkText)
+headerLink.appendChild(headerLinkNumber)
 header.appendChild(sectionContainer);
 sectionContainer.appendChild(logo);
 sectionContainer.appendChild(headerLink);
@@ -80,6 +91,7 @@ function fillCardData (obj, card) {
   obj.description = card.description;
     createBagCard(obj)
 }
+let booksNumber = 0
 function createCard(item) {
   // Create Card
   const bookTableCard = document.createElement('div');
@@ -129,13 +141,15 @@ function createCard(item) {
   })
 
   bookAdd.addEventListener('click', function() {
-    
-    
+    booksNumber = booksNumber + 1
+    headerLinkNumber.innerText = booksNumber
+    console.log(booksNumber)
 if (!(document.querySelector('.bag__title'))) {
   renderBag(item.price)
   fillCardData(cardData, item)
    price = item.price;
 } else {
+  
   fillCardData(cardData, item);
   price = price + item.price;
   document.querySelector('.book-catalog__total').innerText = `Total Price: ${price}`
@@ -198,6 +212,13 @@ function createBagCard(item) {
 
   popupClose.addEventListener('click', function() {
     bookTableCard.remove();
+    booksNumber = booksNumber - 1
+    if (booksNumber > 0) {
+      headerLinkNumber.innerText = booksNumber
+    } else {
+      headerLinkNumber.innerText = ''
+    }
+    
     price = price - bookPriceNum
    document.querySelector('.book-catalog__total').innerText = `Total Price: ${price}`
     if (price <= 0) {
@@ -295,7 +316,7 @@ bookTableBagTitle.innerText = 'Your Books Bag';
 bookTableBagContent.classList.add('book-catalog__content', 'bag__content');
 const confirmOrder = document.createElement('a');
 confirmOrder.classList.add('bag__confirm');
-confirmOrder.setAttribute('href', '#');
+confirmOrder.setAttribute('href', 'https://vs-elen.github.io/book-shop/pages/delivery/index.html');
 confirmOrder.innerText = 'Confirm Order'
 bookTableBag.appendChild(bookTableBagTitle);
 bookTableBag.appendChild(bookTableBagContent);
@@ -315,6 +336,7 @@ const footerContainer = document.createElement('div');
 footerContainer.classList.add('section-container');
 const footerLogo = document.createElement('a');
 footerLogo.classList.add('logo');
+footerLogo.setAttribute('href', "https://vs-elen.github.io/book-shop/pages/catalog/index.html");
 const footerPicture = document.createElement('img');
 footerPicture.classList.add('picture-item');
 footerPicture.setAttribute('alt', "Company logo");
