@@ -66,6 +66,7 @@ font-size: 18px;
 line-height: 140%;
 color: #fff;
 text-transform: uppercase;
+text-decoration: none;
 }
 .header__text {
     display: inline;
